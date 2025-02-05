@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
+﻿
 // Write your JavaScript code.
+
+$('#calcPriceButton').click(function () {
+    if ($.isNumeric($('#hoursInput').val()) && $('#hoursInput').val() >= 0)
+    {$('#priceOutput').text("$" + ($('#hoursInput').val() * $('#price').val()).toFixed(2))}
+    else {$('#priceOutput').text("Cannot calculate price, please enter a positive number.")}
+})
